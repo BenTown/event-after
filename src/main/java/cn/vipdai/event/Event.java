@@ -30,7 +30,7 @@ public abstract class Event {
         return true;
     }
 
-    public static void doAfter(int type,  Object... args)
+    public static void doAfter(int type, Object... args)
             throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException,
             SecurityException, IllegalArgumentException, InvocationTargetException {
         try {
