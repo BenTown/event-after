@@ -24,7 +24,7 @@ public abstract class Event {
     /**
      * 是否首次投资
      * 
-     * @return enable
+     * @return isFirstBid
      */
     public boolean isFirstBid() {
         return true;
