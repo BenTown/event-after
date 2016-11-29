@@ -1,5 +1,5 @@
 package cn.vipdai.event;
 
-public interface AfterFirstBid {
+public interface AfterFirstBid extends After {
     void afterFirstBid();
 }

@@ -1,5 +1,5 @@
 package cn.vipdai.event;
 
-public interface AfterBid {
+public interface AfterBid extends After {
     void afterBid();
 }

@@ -1,5 +1,5 @@
 package cn.vipdai.event;
 
-public interface AfterRegsiter {
+public interface AfterRegsiter extends After {
     void afterRegsiter();
 }
