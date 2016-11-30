@@ -1,4 +1,4 @@
-package cn.vipdai.entity.pool;
+package cn.vipdai.entity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

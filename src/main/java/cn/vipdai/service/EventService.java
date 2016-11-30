@@ -1,6 +1,6 @@
 package cn.vipdai.service.event;
 
-import cn.vipdai.entity.pool.ThreadPool;
+import cn.vipdai.entity.ThreadPool;
 
 public class EventService {
 
