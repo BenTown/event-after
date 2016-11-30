@@ -1,8 +1,8 @@
-package cn.vipdai.event.impl;
+package cn.vipdai.service.event.impl;
 
-import cn.vipdai.event.AfterBid;
-import cn.vipdai.event.AfterRegsiter;
-import cn.vipdai.event.Event;
+import cn.vipdai.service.event.AfterBid;
+import cn.vipdai.service.event.AfterRegsiter;
+import cn.vipdai.service.event.Event;
 
 public class NewEvent extends Event implements AfterRegsiter, AfterBid {
 

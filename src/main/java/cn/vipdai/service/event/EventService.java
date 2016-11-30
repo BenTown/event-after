@@ -1,4 +1,4 @@
-package cn.vipdai.event;
+package cn.vipdai.service.event;
 
 import cn.vipdai.entity.pool.ThreadPool;
 

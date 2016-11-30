@@ -1,9 +1,9 @@
-package cn.vipdai.event;
+package cn.vipdai.service.event;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-import cn.vipdai.event.impl.DefaultEvent;
+import cn.vipdai.service.event.impl.DefaultEvent;
 import cn.vipdai.util.ClassUtil;
 
 public class Events implements Runnable {

@@ -1,4 +1,4 @@
-package cn.vipdai.event;
+package cn.vipdai.service.event;
 
 public interface AfterRegsiter extends After {
     void afterRegsiter();

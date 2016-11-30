@@ -1,4 +1,4 @@
-package cn.vipdai.event;
+package cn.vipdai.service.event;
 
 public interface AfterFirstBid extends After {
     void afterFirstBid();

@@ -1,9 +1,9 @@
-package cn.vipdai.event.impl;
+package cn.vipdai.service.event.impl;
 
-import cn.vipdai.event.AfterBid;
-import cn.vipdai.event.AfterFirstBid;
-import cn.vipdai.event.AfterRegsiter;
-import cn.vipdai.event.Event;
+import cn.vipdai.service.event.AfterBid;
+import cn.vipdai.service.event.AfterFirstBid;
+import cn.vipdai.service.event.AfterRegsiter;
+import cn.vipdai.service.event.Event;
 
 public class DefaultEvent extends Event implements AfterRegsiter, AfterBid, AfterFirstBid {
 
