@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
 /**
  * 活动是否启用
  */
-@Target(ElementType.TYPE)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface UseEventEnable {
+public @interface UseIsFirstBId {
 }

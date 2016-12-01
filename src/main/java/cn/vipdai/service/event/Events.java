@@ -1,6 +1,7 @@
 package cn.vipdai.service.event;
 
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import cn.vipdai.service.event.impl.DefaultEvent;
@@ -31,7 +32,7 @@ public class Events implements Runnable {
                 doAfter(AfterBid.class);
                 break;
             case FirstBid:
-                doAfter(AfterFirstBid.class);
+                doAfter(AfterLoan.class);
                 break;
             default:
                 break;
@@ -61,20 +62,32 @@ public class Events implements Runnable {
                 }
                 // 判断活动实现类是否继承了After接口
                 if (isImpl(afterClazz, eventClazz)) {
+                    Method method = eventClazz.getMethod(afterClazz.getMethods()[0].getName());
+                    // 判断活动实现方法是否使用父类默认isFirstBid()
+                    if (UseIsFirstBId(method)) {
+                        if (!event.isFirstBid()) {
+                            continue;
+                        }
+                    }
                     // 调用After接口函数
-                    eventClazz.getMethod(afterClazz.getMethods()[0].getName()).invoke(event, args);
+                    method.invoke(event, args);
                 }
             }
         }
     }
 
     private boolean useEnable(Class<?> eventClazz) {
-        return !eventClazz.isAnnotationPresent(UseEventEnable.class)
-                || eventClazz.getAnnotation(UseEventEnable.class).value();
+        return eventClazz.isAnnotationPresent(UseEventEnable.class);
     }
 
     private boolean isImpl(Class<?> afterClazz, Class<?> eventClazz) {
         return afterClazz.isAssignableFrom(eventClazz);
+    }
+
+    private boolean UseIsFirstBId(Method method) {
+        // 只对实现了AfterBid的方法起作用
+        return method.getName().equals(AfterBid.class.getMethods()[0].getName())
+                && method.isAnnotationPresent(UseIsFirstBId.class);
     }
 
 }

@@ -1,11 +1,11 @@
 package cn.vipdai.service.event.impl;
 
 import cn.vipdai.service.event.AfterBid;
-import cn.vipdai.service.event.AfterFirstBid;
+import cn.vipdai.service.event.AfterLoan;
 import cn.vipdai.service.event.AfterRegsiter;
 import cn.vipdai.service.event.Event;
 
-public class DefaultEvent extends Event implements AfterRegsiter, AfterBid, AfterFirstBid {
+public class DefaultEvent extends Event implements AfterRegsiter, AfterBid, AfterLoan {
 
     @Override
     public void afterBid() {
@@ -18,7 +18,7 @@ public class DefaultEvent extends Event implements AfterRegsiter, AfterBid, Afte
     }
 
     @Override
-    public void afterFirstBid() {
+    public void afterLoan() {
         System.out.println("DefaultEvent-afterFirstBid");
     }
 
