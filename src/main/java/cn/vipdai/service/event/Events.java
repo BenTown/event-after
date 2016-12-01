@@ -42,8 +42,7 @@ public class Events implements Runnable {
         }
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public void doAfter(Class afterClazz, Object... args)
+    public void doAfter(Class<?> afterClazz, Object... args)
             throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException,
             SecurityException, IllegalArgumentException, InvocationTargetException {
 
@@ -53,7 +52,7 @@ public class Events implements Runnable {
         // 遍历所有活动实现类
         if (classNames != null) {
             for (String className : classNames) {
-                Class eventClazz = Class.forName(className);
+                Class<?> eventClazz = Class.forName(className);
                 // 判断活动实现类是否继承了After接口
                 boolean isImpl = afterClazz.isAssignableFrom(eventClazz);
                 if (isImpl) {
