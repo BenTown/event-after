@@ -45,7 +45,6 @@ public class Events implements Runnable {
     public void doAfter(Class<?> afterClazz, Object... args)
             throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException,
             SecurityException, IllegalArgumentException, InvocationTargetException {
-
         // 获取所有活动实现类
         String packageName = DefaultEvent.class.getPackage().getName();
         List<String> classNames = ClassUtil.getClassName(packageName, false);
@@ -53,14 +52,29 @@ public class Events implements Runnable {
         if (classNames != null) {
             for (String className : classNames) {
                 Class<?> eventClazz = Class.forName(className);
+                Event event = (Event) eventClazz.newInstance();
+                // 判断活动实现类是否使用父类默认enable()
+                if (useEnable(eventClazz)) {
+                    if (!event.enable()) {
+                        continue;
+                    }
+                }
                 // 判断活动实现类是否继承了After接口
-                boolean isImpl = afterClazz.isAssignableFrom(eventClazz);
-                if (isImpl) {
+                if (isImpl(afterClazz, eventClazz)) {
                     // 调用After接口函数
-                    eventClazz.getMethod(afterClazz.getMethods()[0].getName()).invoke(eventClazz.newInstance(), args);
+                    eventClazz.getMethod(afterClazz.getMethods()[0].getName()).invoke(event, args);
                 }
             }
         }
-
     }
+
+    private boolean useEnable(Class<?> eventClazz) {
+        return !eventClazz.isAnnotationPresent(UseEventEnable.class)
+                || eventClazz.getAnnotation(UseEventEnable.class).value();
+    }
+
+    private boolean isImpl(Class<?> afterClazz, Class<?> eventClazz) {
+        return afterClazz.isAssignableFrom(eventClazz);
+    }
+
 }
