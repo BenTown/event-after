@@ -7,17 +7,13 @@ public abstract class Event {
      * 
      * @return enable
      */
-    public boolean enable() {
-        return true;
-    }
+    abstract public boolean enable();
 
     /**
      * 是否首次投资
      * 
      * @return isFirstBid
      */
-    public boolean isFirstBid() {
-        return true;
-    }
+    abstract public boolean isFirstBid();
 
 }
