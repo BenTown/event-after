@@ -2,13 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>cn.vipdai</groupId>
-  <artifactId>vipdai_base</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <groupId>me.println.project</groupId>
+  <artifactId>event-after</artifactId>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
 
-  <name>vipdai_base</name>
-  <url>http://maven.apache.org</url>
+  <name>event-after</name>
+  <url>http://project.println.me/event-after</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
