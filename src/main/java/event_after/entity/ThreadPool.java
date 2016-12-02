@@ -1,4 +1,4 @@
-package cn.vipdai.entity;
+package event_after.entity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

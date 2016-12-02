@@ -1,6 +1,6 @@
-package cn.vipdai.service.event.impl;
+package event_after.service.event.impl;
 
-import cn.vipdai.service.event.Event;
+import event_after.service.event.Event;
 
 public class AbstractEvent extends Event {
 

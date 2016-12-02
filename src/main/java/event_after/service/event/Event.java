@@ -1,4 +1,4 @@
-package cn.vipdai.service.event;
+package event_after.service.event;
 
 public abstract class Event {
 

@@ -1,18 +1,18 @@
-package cn.vipdai.service;
+package event_after.service;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-import cn.vipdai.entity.ThreadPool;
-import cn.vipdai.service.event.AfterBid;
-import cn.vipdai.service.event.AfterLoan;
-import cn.vipdai.service.event.AfterRegsiter;
-import cn.vipdai.service.event.Event;
-import cn.vipdai.service.event.UseEventEnable;
-import cn.vipdai.service.event.UseIsFirstBId;
-import cn.vipdai.service.event.impl.DefaultEvent;
-import cn.vipdai.util.ClassUtil;
+import event_after.entity.ThreadPool;
+import event_after.service.event.AfterBid;
+import event_after.service.event.AfterLoan;
+import event_after.service.event.AfterRegsiter;
+import event_after.service.event.Event;
+import event_after.service.event.UseEventEnable;
+import event_after.service.event.UseIsFirstBId;
+import event_after.service.event.impl.DefaultEvent;
+import event_after.util.ClassUtil;
 
 public class EventService {
 

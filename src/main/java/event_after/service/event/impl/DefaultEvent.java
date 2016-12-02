@@ -1,9 +1,9 @@
-package cn.vipdai.service.event.impl;
+package event_after.service.event.impl;
 
-import cn.vipdai.service.event.AfterBid;
-import cn.vipdai.service.event.AfterLoan;
-import cn.vipdai.service.event.AfterRegsiter;
-import cn.vipdai.service.event.UseEventEnable;
+import event_after.service.event.AfterBid;
+import event_after.service.event.AfterLoan;
+import event_after.service.event.AfterRegsiter;
+import event_after.service.event.UseEventEnable;
 
 @UseEventEnable
 public class DefaultEvent extends AbstractEvent implements AfterRegsiter, AfterBid, AfterLoan {

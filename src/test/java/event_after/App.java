@@ -1,6 +1,6 @@
-package cn.vipdai.vipdai_base;
+package event_after;
 
-import cn.vipdai.service.EventService;
+import event_after.service.EventService;
 
 /**
  * Hello world!

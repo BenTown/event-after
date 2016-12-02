@@ -1,4 +1,4 @@
-package cn.vipdai.service.event;
+package event_after.service.event;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
 /**
  * 活动是否启用
  */
-@Target(ElementType.METHOD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface UseIsFirstBId {
+public @interface UseEventEnable {
 }
