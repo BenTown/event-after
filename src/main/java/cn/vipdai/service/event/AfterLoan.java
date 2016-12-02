@@ -1,5 +1,5 @@
 package cn.vipdai.service.event;
 
 public interface AfterLoan extends After {
-    void afterLoan(int orderId);
+    void afterLoan(Integer orderId);
 }

@@ -31,11 +31,12 @@ public class EventService {
     class Events implements Runnable {
 
         Class<?> afterClazz;
-        Object[] ids;
+        int id;
 
-        public Events(Class<?> afterClazz, Object... ids) {
+        public Events(Class<?> afterClazz, int id) {
+            Thread.currentThread().setName("执行操作"+afterClazz.getName()+"-"+id);
             this.afterClazz = afterClazz;
-            this.ids = ids;
+            this.id = id;
         }
 
         @Override
@@ -58,7 +59,7 @@ public class EventService {
                         // 判断活动实现类是否继承了After接口
                         if (isImpl(afterClazz, eventClazz)) {
                             Method method = eventClazz
-                                    .getMethod(afterClazz.getMethods()[0].getName());
+                                    .getMethod(afterClazz.getMethods()[0].getName(), Integer.class);
                             // 判断活动实现方法是否使用父类默认isFirstBid()
                             if (useIsFirstBId(method)) {
                                 if (!event.isFirstBid()) {
@@ -66,7 +67,7 @@ public class EventService {
                                 }
                             }
                             // 调用After接口函数
-                            method.invoke(event, ids);
+                            method.invoke(event, id);
                         }
                     }
                 }
