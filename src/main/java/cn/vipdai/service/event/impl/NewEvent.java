@@ -2,9 +2,8 @@ package cn.vipdai.service.event.impl;
 
 import cn.vipdai.service.event.AfterBid;
 import cn.vipdai.service.event.AfterRegsiter;
-import cn.vipdai.service.event.Event;
 
-public class NewEvent extends Event implements AfterRegsiter, AfterBid {
+public class NewEvent extends AbstractEvent implements AfterRegsiter, AfterBid {
 
     @Override
     public void afterBid() {
