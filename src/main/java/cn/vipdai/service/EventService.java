@@ -12,5 +12,9 @@ public class EventService {
     public void afterBid(int bidId) {
         ThreadPool.getThreedPoolEvent().execute(new Events(Events.Bid, bidId));
     }
+    
+    public void afterLoan(int bidId) {
+        ThreadPool.getThreedPoolEvent().execute(new Events(Events.Loan, bidId));
+    }
 
 }

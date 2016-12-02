@@ -11,7 +11,7 @@ public class Events implements Runnable {
 
     public static final int Register = 1;
     public static final int Bid = 2;
-    public static final int FirstBid = 3;
+    public static final int Loan = 3;
 
     public int type;
     Object[] args;
@@ -31,7 +31,7 @@ public class Events implements Runnable {
             case Bid:
                 doAfter(AfterBid.class);
                 break;
-            case FirstBid:
+            case Loan:
                 doAfter(AfterLoan.class);
                 break;
             default:
