@@ -7,17 +7,17 @@ import cn.vipdai.service.event.AfterRegsiter;
 public class DefaultEvent extends AbstractEvent implements AfterRegsiter, AfterBid, AfterLoan {
 
     @Override
-    public void afterBid() {
+    public void afterBid(int orderId) {
         System.out.println("DefaultEvent-afterBid");
     }
 
     @Override
-    public void afterRegsiter() {
+    public void afterRegsiter(int userId) {
         System.out.println("DefaultEvent-afterRegsiter");
     }
 
     @Override
-    public void afterLoan() {
+    public void afterLoan(int orderId) {
         System.out.println("DefaultEvent-afterFirstBid");
     }
 
