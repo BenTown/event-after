@@ -64,7 +64,7 @@ public class Events implements Runnable {
                 if (isImpl(afterClazz, eventClazz)) {
                     Method method = eventClazz.getMethod(afterClazz.getMethods()[0].getName());
                     // 判断活动实现方法是否使用父类默认isFirstBid()
-                    if (UseIsFirstBId(method)) {
+                    if (useIsFirstBId(method)) {
                         if (!event.isFirstBid()) {
                             continue;
                         }
@@ -84,7 +84,7 @@ public class Events implements Runnable {
         return afterClazz.isAssignableFrom(eventClazz);
     }
 
-    private boolean UseIsFirstBId(Method method) {
+    private boolean useIsFirstBId(Method method) {
         // 只对实现了AfterBid的方法起作用
         return method.getName().equals(AfterBid.class.getMethods()[0].getName())
                 && method.isAnnotationPresent(UseIsFirstBId.class);
